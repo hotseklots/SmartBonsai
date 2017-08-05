@@ -12,6 +12,9 @@
 #include "ITempSensor.h"
 #include "DHT.h"
 
+/**
+ * Controls the DHT11 sensor
+ */
 class CDHT11Sensor: IHumiditySensor, ITempSensor {
 public:
     /**
