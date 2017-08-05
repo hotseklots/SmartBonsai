@@ -1,13 +1,11 @@
 #include <Arduino.h>
-#include "ESP8266WiFi.h"
-#include "WifiOperations.h"
 
-CWifiOperations* wifiOperation;
+#include "HwConfig.h"
 
 void setup() {
     Serial.begin(115200);
     wifiOperation = new CWifiOperations();
-
+    dhtSensor = new CDHT11Sensor(DHT_PIN);
     wifiOperation->selectWifi();
     Serial.println("Setup done");
 
@@ -19,9 +17,10 @@ void loop() {
         wifiOperation->reconnect();
     }
 
-
-
-    WiFi.disconnect();
+    delay(5000);
+    if (!wifiOperation->isConnected()) {
+        wifiOperation->disconnect();
+    }
 
     // Wait a bit before scanning again
     delay(5000);

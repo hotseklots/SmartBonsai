@@ -12,6 +12,7 @@
  * Interface for humidity sensors
  */
 class IHumiditySensor {
+public:
     /**
      * Constructor
      */
@@ -26,11 +27,15 @@ class IHumiditySensor {
 
     /**
      * Initialize sensor
+     *
+     * @return true if success, false if failed
      */
     virtual bool initialize() =0;
 
     /**
      * Get current humidity
+     *
+     * @return humidity in %
      */
     virtual uint8_t getHumidity() =0;
 };

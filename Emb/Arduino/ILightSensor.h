@@ -14,12 +14,12 @@
  * Interface for light sensors
  */
 class ILightSensor {
+public:
     /**
      * Constructor
      */
     ILightSensor() {
     }
-
 
     /**
      * Deconstructor
@@ -28,7 +28,16 @@ class ILightSensor {
     }
 
     /**
+     * Initialize sensor
+     *
+     * @return true if success, false if failed
+     */
+    virtual bool initialize() =0;
+
+    /**
      * Get current light level
+     *
+     * @return humidity in %
      */
     virtual uint8_t getLightLevel()=0;
 };

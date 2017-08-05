@@ -31,13 +31,13 @@ public:
      * Get temperature in tenthes of degrees C
      * @return temperature in tenthes of degrees C
      */
-    uint16_t getTemperature();
+    int16_t getTemperature();
 
     /**
      * Get humidity of the soil in %
      * @return humidity in %
      */
-    uint16_t getSoilHumidithy();
+    uint16_t getSoilHumidity();
 
     /**
      * Get light level in %
