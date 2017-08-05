@@ -13,13 +13,21 @@
 #include "ITempSensor.h"
 #include "ILightSensor.h"
 
+/**
+ * Contains the sensors of the system
+ */
 class CEnviromentSensing {
 public:
-
-    CEnviromentSensing( ILightSensor& lightSensor,
-            ITempSensor& tempSensor,
-            IHumiditySensor& airHumidity,
-            IHumiditySensor& soilHumidity);
+    /**
+     * Constructor
+     *
+     * @param lightsensor of the system
+     * @param temp sensor of the system
+     * @param air humidity sensor of the system
+     * @param soil humidity sensor of the system
+     */
+    CEnviromentSensing(ILightSensor& lightSensor, ITempSensor& tempSensor,
+            IHumiditySensor& airHumidity, IHumiditySensor& soilHumidity);
 
     /**
      * Get humidity of the air in %
@@ -46,10 +54,10 @@ public:
     uint16_t getLightLevel();
 
 private:
-    ILightSensor& m_lightSensor;
-    ITempSensor& m_tempSensor;
-    IHumiditySensor& m_airHumidity;
-    IHumiditySensor& m_soilHumidity;
+    ILightSensor& m_lightSensor; //!< light sensor
+    ITempSensor& m_tempSensor; //!< temperature sensor
+    IHumiditySensor& m_airHumidity; //!< air humidity sensor
+    IHumiditySensor& m_soilHumidity; //!< soil humidity sensor
 
     CEnviromentSensing(); // Intentional undefined
 

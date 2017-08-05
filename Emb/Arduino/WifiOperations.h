@@ -8,10 +8,16 @@
 #ifndef WIFIOPERATIONS_H_
 #define WIFIOPERATIONS_H_
 
+/**
+ * Controlls the wifi operations
+ */
 class CWifiOperations {
 public:
     static const uint8_t BUFFERSIZE = 64; //!< buffersize is also maximum password and ssid length
 
+    /**
+     * Constructor
+     */
     CWifiOperations();
 
     /**

@@ -15,6 +15,9 @@ CWifiOperations* wifiOperation;
 CDHT11Sensor* dhtSensor;
 static const uint8_t DHT_PIN = 5;
 
-
+#include "SoilHumidityMeter.h"
+CSoilHumidityMeter* soilSensor;
+static const uint8_t SOIL_ADC_PIN = A0;
+static const uint8_t SOIL_POWER_PIN = 9;
 
 #endif /* HWCONFIG_H_ */
