@@ -6,21 +6,28 @@
  */
 #include "EnviromentSensing.h"
 
-CEnviromentSensing::CEnviromentSensing() {
-}
 
-uint8_t CEnviromentSensing::getAirHumidity() { //todo: implement sensor
-    return 0;
+CEnviromentSensing::CEnviromentSensing ( ILightSensor& lightSensor,
+        ITempSensor& tempSensor,
+        IHumiditySensor& airHumidity,
+        IHumiditySensor& soilHumidity):
+m_lightSensor(lightSensor),
+m_tempSensor(tempSensor),
+m_airHumidity (airHumidity),
+m_soilHumidity (soilHumidity){}
+
+uint8_t CEnviromentSensing::getAirHumidity() {
+    return m_airHumidity.getHumidity();
 }
 
 uint16_t CEnviromentSensing::getTemperature() { //todo: implement sensor
-    return 0;
+    return m_tempSensor.getTemperature();
 }
 
 uint16_t CEnviromentSensing::getSoilHumidithy() { //todo: implement sensor
-    return 0;
+    return m_soilHumidity.getHumidity();
 }
 
-uint16_t CEnviromentSensing::getLightLevel() { //todo: implement sensor
-    return 0;
+uint16_t CEnviromentSensing::getLightLevel() {
+    return m_lightSensor.getLightLevel();
 }

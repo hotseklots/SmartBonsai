@@ -9,9 +9,17 @@
 #define ENVIROMENTSENSING_H_
 
 #include <Arduino.h>
+#include "IHumiditySensor.h"
+#include "ITempSensor.h"
+#include "ILightSensor.h"
 
 class CEnviromentSensing {
-    CEnviromentSensing();
+public:
+
+    CEnviromentSensing( ILightSensor& lightSensor,
+            ITempSensor& tempSensor,
+            IHumiditySensor& airHumidity,
+            IHumiditySensor& soilHumidity);
 
     /**
      * Get humidity of the air in %
@@ -36,6 +44,14 @@ class CEnviromentSensing {
      * @return the light in %
      */
     uint16_t getLightLevel();
+
+private:
+    ILightSensor& m_lightSensor;
+    ITempSensor& m_tempSensor;
+    IHumiditySensor& m_airHumidity;
+    IHumiditySensor& m_soilHumidity;
+
+    CEnviromentSensing(); // Intentional undefined
 
 };
 
