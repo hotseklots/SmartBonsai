@@ -24,8 +24,13 @@ public:
      * Reconnect to last selected Wifi
      * @return true if connected false otherwise
      */
-
     bool reconnect();
+
+    /**
+     * Disconnect and disable wifi
+     * @return true if success false otherwise
+     */
+    bool disconnect();
 
     /**
      * Gets if currently connectd to a network

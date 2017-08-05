@@ -94,7 +94,7 @@ bool CWifiOperations::reconnect() {
     WiFi.begin(m_ssid, m_password);
     while (WiFi.status() != WL_CONNECTED) {
         delay(500);
-        Serial.print(".");
+        Serial.print(WiFi.status());
         if (WiFi.status() == WL_CONNECT_FAILED) {
             Serial.println("Invalid Password");
             return false;
@@ -106,4 +106,8 @@ bool CWifiOperations::reconnect() {
     Serial.println(WiFi.localIP());
 
     return false;
+}
+
+bool CWifiOperations::disconnect() {
+    return WiFi.disconnect(true);
 }
