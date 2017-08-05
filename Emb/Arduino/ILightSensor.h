@@ -37,7 +37,7 @@ public:
     /**
      * Get current light level
      *
-     * @return humidity in %
+     * @return light level in %
      */
     virtual uint8_t getLightLevel()=0;
 };
