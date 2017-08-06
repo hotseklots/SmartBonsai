@@ -5,8 +5,6 @@
  *      Author: marcel
  */
 
-#ifndef GROUNDHUMIDITYMETER_CPP_
-#define GROUNDHUMIDITYMETER_CPP_
 #include "SoilHumidityMeter.h"
 
 CSoilHumidityMeter::CSoilHumidityMeter(uint8_t adcPin, uint8_t powerPin) :
@@ -26,4 +24,3 @@ uint8_t CSoilHumidityMeter::getHumidity() {
     return ((sensorValue * 100) / 1024);
 }
 
-#endif /* GROUNDHUMIDITYMETER_CPP_ */

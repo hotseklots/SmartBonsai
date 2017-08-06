@@ -13,7 +13,7 @@
  */
 class CWifiOperations {
 public:
-    static const uint8_t BUFFERSIZE = 64; //!< buffersize is also maximum password and ssid length
+    static const uint8_t BUFFERSIZE = 32; //!< buffersize is also maximum password and ssid length
 
     /**
      * Constructor
