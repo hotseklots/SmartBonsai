@@ -14,8 +14,7 @@
 /**
  * Measures the humidity of soil
  */
-class CSoilHumidityMeter:IHumiditySensor
-{
+class CSoilHumidityMeter: public IHumiditySensor {
 public:
     /**
      * Constructor
@@ -38,7 +37,6 @@ public:
      */
     virtual uint8_t getHumidity();
 
-
 private:
     const uint8_t m_adcPin; //!< Pin at which the ADC of the soil sensor is attached
     const uint8_t m_powerPin; //!< Pin at which the power pin is located
@@ -46,7 +44,5 @@ private:
     CSoilHumidityMeter(); //intentional undefined
 
 };
-
-
 
 #endif /* SOILHUMIDITYMETER_H_ */
