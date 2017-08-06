@@ -15,7 +15,7 @@
 /**
  * Controls the DHT11 sensor
  */
-class CDHT11Sensor: IHumiditySensor, ITempSensor {
+class CDHT11Sensor: public IHumiditySensor, public ITempSensor {
 public:
     /**
      * Constructor
@@ -43,7 +43,7 @@ public:
      */
     virtual uint8_t getHumidity();
 private:
-    DHT m_dht;//!< DHT11 sensor object
+    DHT m_dht; //!< DHT11 sensor object
 
     CDHT11Sensor(); //intentional undefined
 
